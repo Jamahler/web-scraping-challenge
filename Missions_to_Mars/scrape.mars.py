@@ -32,6 +32,17 @@ def scrape_info():
     img = soup.find("img", class_='thumb')["src"]
     mars_data["featured_image_url"] = "https://www.jpl.nasa.gov" + img
 
+    url_table = "https://space-facts.com/mars"
+
+    time.sleep(3)
+
+    mars_table = pd.read_html(url_table)
+    mars_df = mars_table[0]
+    mars_df.columns = ["Facts", "Data"]
+    mars_df = mars_df.to_html()
+    mars_data["mars_df"] = mars_df.replace('\n','')
+    
+
 
 
 
