@@ -41,6 +41,23 @@ def scrape_info():
     mars_df.columns = ["Facts", "Data"]
     mars_df = mars_df.to_html()
     mars_data["mars_df"] = mars_df.replace('\n','')
+
+    img_urls = []
+
+    cerberus_url = "https://astrogeology.usgs.gov/search/map/Mars/Viking/cerberus_enhanced"
+    browser.visit(cerberus_url)
+
+    time.sleep(3)
+
+    html = browser.html
+    soup = BeautifulSoup(html, "html.parser")
+    cerberus_img = soup.find("img", class_="wide-image")["src"]
+    cerberus_title = soup.find("h2", class_="title").get_text()
+    cerberus_img_url = cerberus_url + cerberus_img
+    cerberus = {"title": cerberus_title, "img_url": cerberus_img_url}
+    img_urls.append(cerberus)
+
+    
     
 
 
