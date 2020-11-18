@@ -4,7 +4,7 @@ import pandas as pd
 import time
 
 def init_browser():
-    executable_path = {"executable_path": 'C:/Users/jamah/OneDrive/Desktop/GT Boot Camp/Downloads/chromedriver'} 
+    executable_path = {"executable_path": "C:/Users/jamah/OneDrive/Desktop/GT Boot Camp/Downloads/chromedriver"} 
     return Browser('chrome', **executable_path, headless=False)
 
 def scrape_info():
@@ -14,7 +14,7 @@ def scrape_info():
     url = "https://mars.nasa.gov/news"
     browser.visit(url)
 
-    time.sleep(3)
+    time.sleep(10)
 
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
@@ -25,7 +25,7 @@ def scrape_info():
     url_img = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url_img)
 
-    time.sleep(3)
+    time.sleep(10)
 
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
@@ -34,7 +34,7 @@ def scrape_info():
 
     url_table = "https://space-facts.com/mars"
 
-    time.sleep(3)
+    time.sleep(10)
 
     mars_table = pd.read_html(url_table)
     mars_df = mars_table[0]
@@ -47,7 +47,7 @@ def scrape_info():
     cerberus_url = "https://astrogeology.usgs.gov/search/map/Mars/Viking/cerberus_enhanced"
     browser.visit(cerberus_url)
 
-    time.sleep(3)
+    time.sleep(10)
 
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
@@ -60,7 +60,7 @@ def scrape_info():
     schiaparelli_url = "https://astrogeology.usgs.gov/search/map/Mars/Viking/schiaparelli_enhanced"
     browser.visit(schiaparelli_url)
 
-    time.sleep(3)
+    time.sleep(10)
 
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
@@ -73,7 +73,7 @@ def scrape_info():
     syrtis_major_url = "https://astrogeology.usgs.gov/search/map/Mars/Viking/syrtis_major_enhanced"
     browser.visit(syrtis_major_url)
 
-    time.sleep(3)
+    time.sleep(10)
 
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
@@ -86,7 +86,7 @@ def scrape_info():
     valles_marineris_url = "https://astrogeology.usgs.gov/search/map/Mars/Viking/valles_marineris_enhanced"
     browser.visit(valles_marineris_url)
 
-    time.sleep(3)
+    time.sleep(10)
 
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
