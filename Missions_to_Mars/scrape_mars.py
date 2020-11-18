@@ -4,7 +4,7 @@ import pandas as pd
 import time
 
 def init_browser():
-    executable_path = {'executable_path': 'C:/Users/jamah/OneDrive/Desktop/GT Boot Camp/Downloads/chromedriver'} 
+    executable_path = {"executable_path": 'C:/Users/jamah/OneDrive/Desktop/GT Boot Camp/Downloads/chromedriver'} 
     return Browser('chrome', **executable_path, headless=False)
 
 def scrape_info():
@@ -98,7 +98,13 @@ def scrape_info():
 
     mars_data["img_urls"] = img_urls
 
+    browser.quit()
+
     return mars_data
+
+    
+
+
     
 
 

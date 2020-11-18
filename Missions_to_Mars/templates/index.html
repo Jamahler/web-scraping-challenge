@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+        </div>
+        <h2>{{ mars_facts.news_title }}</h2>
+        <p>{{ mars_facts.news_p }}</p>
+
+        <div class="container">
+            <div class = "row"></div>
+                <div class="col-lg-8">
+                    <div class="imageNav-header">Feature Mars Image</div>
+                    <img src="{{ mars_facts.featured_image_url }}" alt="featured_image_url">
+                </div>
+
+                <div class="col-lg-4">
+                    <h3>Mars Facts</h3>
+                    <table boarder="1" class="dataframe">
+                        {{ mars_facts.mars_df }}
+                    </table>
+                </div>
+            </div>
+                
+        </div>
+
+        <div class="container" style="padding-bottom: 40px;">
+            <div class="row">
+                <div class="col-lg-6" style="padding: 20px;">
+                    <div class="imageNav-header">vs. Max Temperature</div>            
+                      <img src="{{ mars_facts.cerberus }}" alt="cerberus", title="Cerberus" class="imageNav-photo">
+                </div>			          
+                <div class="col-lg-6" style="padding: 20px;">
+                  <div class="imageNav-header">vs. Max Humidity</div>
+                    <img src="{{ mars_facts.schiaparelli }}" alt="schiaparelli", title="Schiaparelli" class="imageNav-photo">
+                </div>
+                <div class="col-lg-6" style="padding: 20px;">
+                  <div class="imageNav-header">vs. Cloudiness</div>
+                    <img src="{{ mars_facts.syrtis_major }}" alt="syrtis_major", title="Syrtis_major", class="imageNav-photo">
+                </div>
+                <div class="col-lg-6" style="padding: 20px;">
+                    <div class="imageNav-header">vs. Cloudiness</div>
+                      <img src="{{ mars_facts.valles_marineris }}" alt="valles_marineris", title="Valles_marineris", class="imageNav-photo">
+                </div>
+            </div>
+        </div>  
+
+
+
+    </div>
+
+
+
+</body>
+
