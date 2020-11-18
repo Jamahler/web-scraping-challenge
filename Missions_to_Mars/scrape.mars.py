@@ -14,7 +14,7 @@ def scrape_info():
     url = "https://mars.nasa.gov/news"
     browser.visit(url)
 
-    time.sleep(1)
+    time.sleep(3)
 
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
@@ -24,6 +24,19 @@ def scrape_info():
 
     url_img = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url_img)
+
+    time.sleep(3)
+
+    html = browser.html
+    soup = BeautifulSoup(html, "html.parser")
+    img = soup.find("img", class_='thumb')["src"]
+    mars_data["featured_image_url"] = "https://www.jpl.nasa.gov" + img
+
+
+
+
+
+
 
 
 
