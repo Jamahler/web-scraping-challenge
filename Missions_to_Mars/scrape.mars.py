@@ -57,7 +57,48 @@ def scrape_info():
     cerberus = {"title": cerberus_title, "img_url": cerberus_img_url}
     img_urls.append(cerberus)
 
-    
+    schiaparelli_url = "https://astrogeology.usgs.gov/search/map/Mars/Viking/schiaparelli_enhanced"
+    browser.visit(schiaparelli_url)
+
+    time.sleep(3)
+
+    html = browser.html
+    soup = BeautifulSoup(html, "html.parser")
+    schiaparelli_img = soup.find("img", class_="wide-image")["src"]
+    schiaparelli_title = soup.find("h2", class_="title").get_text()
+    schiaparelli_img_url = schiaparelli_url + schiaparelli_img
+    schiaparelli = {"title": schiaparelli_title, "img_url": schiaparelli_img_url}
+    img_urls.append(schiaparelli)
+
+    syrtis_major_url = "https://astrogeology.usgs.gov/search/map/Mars/Viking/syrtis_major_enhanced"
+    browser.visit(syrtis_major_url)
+
+    time.sleep(3)
+
+    html = browser.html
+    soup = BeautifulSoup(html, "html.parser")
+    syrtis_major_img = soup.find("img", class_="wide-image")["src"]
+    syrtis_major_title = soup.find("h2", class_="title").get_text()
+    syrtis_major_img_url = syrtis_major_url + syrtis_major_img
+    syrtis_major = {"title": syrtis_major_title, "img_url": syrtis_major_img_url}
+    img_urls.append(syrtis_major)
+
+    valles_marineris_url = "https://astrogeology.usgs.gov/search/map/Mars/Viking/valles_marineris_enhanced"
+    browser.visit(valles_marineris_url)
+
+    time.sleep(3)
+
+    html = browser.html
+    soup = BeautifulSoup(html, "html.parser")
+    valles_marineris_img = soup.find("img", class_="wide-image")["src"]
+    valles_marineris_title = soup.find("h2", class_="title").get_text()
+    valles_marineris_img_url = valles_marineris_url + valles_marineris_img
+    valles_marineris = {"title": valles_marineris_title, "img_url": valles_marineris_img_url}
+    img_urls.append(valles_marineris)
+
+    mars_data["img_urls"] = img_urls
+
+    return mars_data
     
 
 
