@@ -15,31 +15,27 @@
             <h1>Mission to Mars</h1>
             <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
         </div>
+    </div>
+
+    <div class="container-fluid">        
         <h2>{{ mars_facts.news_title }}</h2>
         <p>{{ mars_facts.news_p }}</p>
+    </div>
 
-        <div class="container">
-            <div class = "row"></div>
-                <div class="col-lg-8">
-                    <div class="imageNav-header">Feature Mars Image</div>
+    <div class="container">
+        <div class = "row">
+            <div class="col">
+                <div class="imageNav-header">Feature Mars Image</div>
                     <img src="{{ mars_facts.featured_image_url }}" alt="featured_image_url">
                 </div>
+            </div>
+            <div class="col">    
+                {{ mars_facts.mars_df }} 
+            </div>
         </div>
+    </div>
 
-        <div class="container">
-            <section class="row">
-                <div>
-                    <div class="description-content">
-                        <h3 class="description-header">Mars Facts</h3>
-                        <div>{{ mars_facts.mars_df }}</div>                              
-
-              
-                    
-                    </div>
-                </div>
-            </section>
-                
-        </div>
+     
 
         <div class="container" style="padding-bottom: 40px;">
             <div class="row">
